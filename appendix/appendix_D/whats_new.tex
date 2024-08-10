@@ -1,0 +1,18 @@
+This appendix lists most of the differences between \ltx{} 2.09, the original 
+version of \ltx{}, and the current version, \ltxee{}.
+
+\section*{Document Styles and Style Options}
+Documents prepared for \ltxee{} begin with a \cmd{\documentclass} command 
+(Section 2.2.2). \ltxee{} realizes it is processing a \ltx{} 2.09 input file and enters
+\textit{compatibility mode} when it encounters a \ltx{} 2.09 \cmd{\documentstyle} command.
+Most \ltx{} 2.09 input files will work with \ltxee{}. However, an error may
+occur if \ltxee{} reads an auxiliary file produced by \ltx{} 2.09, so it's a good
+idea to delete such files before running \ltxee{}.
+
+The document styles of \ltx{} 2.09 have become document classes. \hologo{SliTeX}
+has been eliminated; slides are produced using the \texttt{slides} document class. 
+Standard document-style options that controlled formatting, such as \texttt{twoside}, have
+become document-class options, and are specified as optional arguments to the
+\cmd{\documentclass} command. Other document-style options have become packages, 
+loaded with the \cmd{\usepackage} command (Section 2.2.2). Most nonstandard
+document-style options will work as \ltxee{} packages.

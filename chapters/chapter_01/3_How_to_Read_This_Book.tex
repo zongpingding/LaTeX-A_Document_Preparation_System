@@ -1,0 +1,103 @@
+\section{How to Read This Book}
+While \texttt{sample2e.tex} illustrates many of \ltx{}'s features, it is still only about
+two hundred lines long, and there is a lot that it doesn't explain. Eventually,
+you will want to typeset a document that requires more sophisticated formatting
+than you can obtain by imitating the two sample input files. You will then have
+to look in this book for the necessary information. You can read the section
+containing the information you need without having to read everything that
+precedes it. However, all the later chapters assume you have read Chapters 1
+and 2. For example, suppose you want to set one paragraph of a document in
+small type. Looking up ``type size7'' in the index or browsing through the table
+of contents will lead you to Section 6.7.1, which talks about ``declarations'' and
+their ``scope''-simple concepts that are explained in Chapter 2. It will take just
+a minute or two to learn what to do if you've already read Chapter 2; it could
+be quite frustrating if you haven't. So, it's best to read the first two chapters
+now, before you need them.
+
+
+\ltx{}'s input is a file containing the document's text together with com-
+mands that describe the document's structure; its output is a file of typesetting
+instructions. Another program must be run to convert these instructions into
+printed output. With a high-resolution printer, \ltx{} can generate book-quality
+typesetting.
+
+This book tells you how to prepare a \ltx{}input file. The current chapter
+discusses the philosophy underlying \ltx{}; here is a brief sketch of what's in the
+remaining chapters and appendices:
+
+\def\listSketch#1#2{%
+\bigskip\noindent\textbf{#1}~#2\par
+}
+
+\listSketch{Chapter 2}{explains what you should know to handle most simple documents
+and to read the rest of the book. Section 2.5 contains a summary of
+everything in the chapter; it serves as a short reference manual.}
+
+\listSketch{Chapter 3}{describes logical structures for handling a variety of formatting
+problems. Section 3.4 explains how to define your own commands, which
+can save typing when you write the document and retyping when you
+change it. It's a good idea to read the introduction-up
+to the beginning of Section 3.1-before reading any other part of the chapter.}
+
+\listSketch{Chapter 4}{contains features especially useful for large documents, including
+  automatic cross-referencing and commands for splitting a large file into
+  smaller pieces. Section 4.7 discusses sending your document electronically.}
+
+\listSketch{Chapter 5}{is about making books, slides, and letters (the kind you send by post).}
+
+\listSketch{Chapter 6}{describes the visual formatting of the text. It has information about
+  changing the style of your document, explains how to correct bad line and
+  page breaks, and tells how to do your own formatting of structures not
+  explicitly handled by \ltx{}.}
+
+\listSketch{Chapter 7}{discusses pictures--drawing them yourself and inserting ones prepared with other 
+  programs--and color.}
+
+\listSketch{Chapter 8}{explains how to deal with errors. This is where you should look when \ltx{} prints an 
+error message that you don't understand.}
+
+\listSketch{Appendix A}{describes how to use the \textit{MakeIndex} program to make an index.}
+
+\listSketch{Appendix B}{describes how to make a bibliographic database for use with
+\hologo{BibTeX}, a separate program that provides an automatic bibliography feature for \ltx{}}
+
+\listSketch{Appendix C}{is a reference manual that compactly describes all \ltx{}'s features, 
+including many advanced ones not described in the main text. If a command introduced in the 
+earlier chapters seems to lack some necessary capabilities, check its description here to see if it has them. 
+This appendix is a convenient place to refresh your memory of how something works.}
+
+\listSketch{Appendix D}{describes the differences between the current version of \ltx{}
+and the original version, \ltx{} 2.09.}
+
+\listSketch{Appendix E}{is for the reader who knows \TeX{}, the program on which \ltx{} built, and wants to use 
+\TeX{} commands that are not described in this book.}
+
+When you face a formatting problem, the best place to look for a solution is in
+the table of contents. Browsing through it will give you a good idea of what
+B W has to offer. If the table of contents doesn't work, look in the index; I
+have tried to make it friendly and informative.
+
+Each section of Chapters 3-7 is reasonably self-contained, assurning only
+that you have read Chapter 2. Where additional knowledge is required, explicit
+cross-references are given. Appendix C is also self-contained, but a command's
+description may be hard to understand without first reading the corresponding
+description in the earlier chapters.
+
+The descriptions of most commands include examples of their use. In this book, examples are 
+formatted in two columns, as follows:
+
+\bigskip
+\noindent\parbox{.45\linewidth}{The left column shows the printed output; the right column contains the input that produced it.}
+\hspace*{2em}
+\parbox{.65\linewidth}{\ttfamily The left column shows the printed output; the right column contains the input that produced it.}
+\bigskip
+
+Note the special typewriter type style in the right column. It indicates what
+you type-either text that you put in the input file or something like a file name
+that you type as part of a command to the computer.
+
+Since the sample output is printed in a narrower column, and with smaller
+type, than \ltx{} normally uses, it won't look exactly like the output you'd get
+from that input. The convention of the output appearing to the left of the
+corresponding input is generally also used when commands and their output are
+listed in tables.

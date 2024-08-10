@@ -1,0 +1,41 @@
+\section{Preparing an Input File}
+The input to \ltx{} is a text file. I assume that you know how to use a text
+editor to create such a file, so I will tell you only what should go into your input
+file, not how to get it there. A good text editor can be customized by the user
+to make it easier to prepare \ltx{} input files. Consult the Local Guide to find
+out how to customize the text editors on your computer.
+
+On most computers, file names have two parts separated by a period, like
+\texttt{sample2e.tex}. I will call the first part its first name and the second part 
+its \textit{extension}, so \texttt{sample2e} is the first name of \texttt{sample2e.tex}, and 
+\texttt{tex} is its extension. Your input file's first name can be any name allowed by your 
+computer system, but its extension should be \texttt{tex}.
+
+Let's examine the characters that can appear in input file. First, there
+are the upper- and lowercase letters and the ten digits \texttt{0 ... 9}. Don't confuse
+the uppercase letter \texttt{O}(oh) with the digit \texttt{0}(zero), or the letter \texttt{l}(the lowercase
+el) with the digit \texttt{1}(one). Next, there are the following sixteen punctuation
+characters:
+
+\begin{center}
+  \ttfamily
+  . : ; , ? ! ` ' ( ) [ ] - / * @
+\end{center}
+
+Note that there are two different quote symbols: ` and ' . You may think of ' as
+an ordinary ``single quote'' and ` as a funny symbol, perhaps displayed like \texttt{\textasciigrave} on
+your screen. The \textit{Local Guide} should tell where to find ` and ' on your keyboard,
+if they're not obvious. The characters \texttt{(} and \texttt{)} are ordinary parentheses, while
+\texttt{[} and \texttt{]} are called square brackets, or simply brackets.
+
+The ten special characters
+\begin{center}
+  \ttfamily
+  \# \$ \% \& \_ \{ \} \~{} \^{} \textbackslash
+\end{center}
+
+are used only in \ltx{} commands. Check the \textit{Local Guide} for help in finding
+them on your keyboard. The character \verb|\| is called \textit{backslash}, and should not
+be confused with the more familiar /, as in 1/2. Most B\ltx{} commands begin
+with a \verb|\| character, so you will soon become very familiar with it. The \verb|{| and \verb|}|
+characters are called \textit{curly braces}\index{curly braces} or simply \textit{braces}

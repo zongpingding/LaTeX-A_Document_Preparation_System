@@ -1,0 +1,51 @@
+\documentclass{book}
+\usepackage{LaTeX_2e}
+
+
+
+\begin{document}
+% ==> frontmatter
+\frontmatter
+\inputFrom{frontmatter}
+\mainmatter
+
+
+% input all files
+% ==> chapters
+\inputAllFiles{
+  Getting Acquainted,
+  Getting Started,
+  Carrying On,
+  Moving Information Around,
+  Other Document Classes,
+  Designing It Yourself,
+  Pictures and Colors,
+  Errors
+}
+
+
+% ==> appendices
+\setcounter{chapter}{0}
+\def\thechapter{\Alph{chapter}}
+\def\chaptername{Appendix}
+\inputAllFiles[Alph][appendix]{
+  Using Makelndex,
+  The Bibliography Database,
+  Reference Manual,
+  What's New,
+  Using Plain \TeX{} Commands
+}
+
+
+% endmatter
+\pagestyle{plain}
+\let\cleardoublepage\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+\blankpage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+\end{document}
+
+
+
