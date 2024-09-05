@@ -12,6 +12,10 @@
 
 % input all files
 % ==> chapters
+\def\chaptername{Chapter}
+\renewcommand*{\thechapter}{%
+  \texorpdfstring{}{\chaptername\space}\arabic{chapter}%
+}
 \inputAllFiles{
   Getting Acquainted,
   Getting Started,
@@ -26,25 +30,43 @@
 
 % ==> appendices
 \setcounter{chapter}{0}
-\def\thechapter{\Alph{chapter}}
 \def\chaptername{Appendix}
+\renewcommand\theHchapter{Appendix-\thechapter}
+\renewcommand*{\thechapter}{%
+  \texorpdfstring{}{\chaptername\space}\Alph{chapter}%
+}
 \inputAllFiles[Alph][appendix]{
   Using Makelndex,
   The Bibliography Database,
   Reference Manual,
   What's New,
-  Using Plain \TeX{} Commands
+  Using Plain TeX Commands
 }
 
 
 % endmatter
 \pagestyle{plain}
-\let\cleardoublepage\clearpage
+\phantomsection
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
-\blankpage
+
 \addcontentsline{toc}{chapter}{Index}
 \printindex
+\phantomsection
+
+
+% material for the back cover
+\renewcommand*{\thechapter}{%
+  \texorpdfstring{}{\space}\arabic{chapter}%
+}
+\chapter*{Cheat Sheet}
+\addcontentsline{toc}{chapter}{Cheat Sheet}
+\phantomsection
+\input{./cheatsheet/first_page.tex}
+\input{./cheatsheet/second_page.tex}
+
+% back cover
+\input{./back_cover.tex}
 \end{document}
 
 

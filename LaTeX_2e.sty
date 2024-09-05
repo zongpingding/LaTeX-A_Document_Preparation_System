@@ -9,6 +9,8 @@
 \RequirePackage{hologo}
 \def\ltxee{\hologo{LaTeX2e}}
 \def\ltx{\hologo{LaTeX}}
+\RequirePackage{tikz}
+\RequirePackage{makebarcode}
 
 
 
@@ -33,7 +35,7 @@
 
 
 % ==> structure
-\RequirePackage{tocloft}
+\RequirePackage[titles]{tocloft}
 \setcounter{tocdepth}{4}
 \cftsetindents{subsubsec}{8em}{3em}
 \RequirePackage[pass]{geometry}
@@ -58,17 +60,20 @@
   {\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}
   {\Huge}
 % blank page
-\newcommand{\blankpage}[1][This page intentionally left blank]{
-  \newpage
-  \thispagestyle{empty}
-  \topskip0pt
+\newcommand*{\blankpage}{%
   \vspace*{\fill}
-  \begin{center}
-    {#1}
-  \end{center}
-  \vspace*{\fill}
+  {\centering This page intentionally left blank.\par}
+  \vspace{\fill}
 }
-
+\makeatletter
+\renewcommand*{\cleardoublepage}{%
+  \clearpage\if@twoside\ifodd\c@page\else
+  \blankpage
+  \thispagestyle{empty}
+  \newpage
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi
+}
+\makeatother
 
 
 % ==> index and bib
@@ -80,6 +85,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{hyperref}
 \hypersetup{
+  bookmarksnumbered,
   colorlinks = true,
   urlcolor   = red,
   linkcolor  = black,
