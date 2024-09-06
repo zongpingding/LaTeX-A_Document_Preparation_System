@@ -36,7 +36,7 @@
   \texorpdfstring{}{\chaptername\space}\Alph{chapter}%
 }
 \inputAllFiles[Alph][appendix]{
-  Using Makelndex,
+  Using MakeIndex,
   The Bibliography Database,
   Reference Manual,
   What's New,
@@ -46,22 +46,23 @@
 
 % endmatter
 \pagestyle{plain}
+\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 
+\cleardoublepage
+\phantomsection
 \addcontentsline{toc}{chapter}{Index}
 \printindex
-\phantomsection
+\indexOrder
 
 
 % material for the back cover
 \renewcommand*{\thechapter}{%
   \texorpdfstring{}{\space}\arabic{chapter}%
 }
-\chapter*{Cheat Sheet}
-\addcontentsline{toc}{chapter}{Cheat Sheet}
-\phantomsection
+\Uchapter{Cheat Sheet}
 \input{./cheatsheet/first_page.tex}
 \input{./cheatsheet/second_page.tex}
 

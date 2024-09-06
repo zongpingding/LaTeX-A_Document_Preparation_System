@@ -42,23 +42,27 @@
 \newcommand{\Newchapter}[2]{
   \newgeometry{margin=2cm}
   \chapter{#1}
+  \vspace*{-3em}
   \begin{center}
-    \includegraphics[width=.75\linewidth]{#2}
+    \includegraphics[width=.9\linewidth]{#2}
   \end{center}
   \thispagestyle{plain}
   \restoregeometry
 }
 % unchapter
-\newcommand{\uchapter}[1]{%
-  \chapter*{#1}%
-  \markboth{#1}{}%
-  \addcontentsline{toc}{chapter}{#1}%
+\newcommand{\Uchapter}[1]{%
+  \chapter*{#1}
+  \markboth{#1}{}
+  \addcontentsline{toc}{chapter}{#1}
+  \phantomsection
 }
 % chapter style
 \RequirePackage{titlesec}
+\newcommand\HUGE{\@setfontsize\Huge{38}{47}} 
 \titleformat{\chapter}[display]
   {\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}
-  {\Huge}
+  {\HUGE}
+\titlespacing*{\chapter}{0pt}{*-1.5}{*8}
 % blank page
 \newcommand*{\blankpage}{%
   \vspace*{\fill}
@@ -91,7 +95,45 @@
   linkcolor  = black,
   citecolor  = blue
 }
-
+% index margin order
+\def\indexOrder{\marginpar{%
+\textbf{\mbox{Index Order}}\\
+\hspace*{-0.6em}\begin{tabular}{p{.25em}l}
+  \texttt{\#} & \\
+  \texttt{\$}&  \\
+  \texttt{\%} & \\
+  \texttt{\&} & \\
+  \;$\tilde{}$ & (tilde) \\
+  \texttt{\_} & (underscore) \\
+  \texttt{\^} & (circumflex) \\
+  \texttt{\textbackslash} & (backslash) \\
+  \texttt{\{} & \\
+  \texttt{\}} & \\
+  \texttt{.} & (period)\\
+  \texttt{:} & (colon)\\
+  \texttt{;} & (semicolon)\\
+  \texttt{,} & (comma)\\
+  \texttt{?} & \\
+  \texttt{!} & \\
+  \texttt{`} & (left quote)\\
+  \texttt{'} & (right quote)\\
+  ( & \\
+  ) & \\
+  \texttt{[} \\
+  \texttt{]} \\
+  - & (dash)\\
+  / & (slash)\\
+  \texttt{*} & \\
+  \texttt{@} & \\
+  \texttt{+} & \\
+  \texttt{=} & \\
+  \texttt{|} & (vertical line)\\
+  \texttt{<} & \\
+  \texttt{>} & \\
+  \texttt{"} & (double quote)
+\end{tabular}\\
+\texttt{0 ... 1}\\
+\texttt{A\ a\ B\ ...\ z}}}
 
 
 % ==> writing verb command
@@ -129,14 +171,14 @@
   \str_case:nn {#2}{
     {chapter}{
       \seq_map_inline:Nn \l_tmpa_seq {
-        \exp_args:Nxx \Newchapter{##1}{./figure/chap_\tl_use:N \l_tmpa_tl.png}
+        \exp_args:Nxx \Newchapter{##1}{./figure/chap_\tl_use:N \l_tmpa_tl.pdf}
         \__inputFrom:x {chapters/chapter_0\int_use:N \l_tmpa_int}
         \int_add:Nn \l_tmpa_int {1}
       }
     }
     {appendix}{
       \seq_map_inline:Nn \l_tmpa_seq {
-        \exp_args:Nxx \Newchapter{##1}{./figure/app_\tl_use:N \l_tmpa_tl.png}
+        \exp_args:Nxx \Newchapter{##1}{./figure/app_\tl_use:N \l_tmpa_tl.pdf}
         \__inputFrom:x {appendix/appendix_\tl_use:N \l_tmpa_tl}
         \int_add:Nn \l_tmpa_int {1}
       }
